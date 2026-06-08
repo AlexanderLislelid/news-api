@@ -14,7 +14,12 @@ export interface Article {
   created_at: Date;
 }
 
-export interface JwtPayload {
+export interface UserResponse {
+  id: number;
+  email: string;
+}
+
+export interface TokenPayload {
   userId: number;
   email: string;
 }
