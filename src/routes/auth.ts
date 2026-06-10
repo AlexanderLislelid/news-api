@@ -1,8 +1,8 @@
 import { Router, Request, Response } from "express";
 import bcrypt from "bcrypt";
-import { pool } from "../db";
-import { User, UserResponse } from "../interfaces";
-import { generateToken } from "../utils/jwt";
+import { pool } from "../db.js";
+import { User, UserResponse } from "../interfaces.js";
+import { generateToken } from "../utils/jwt.js";
 
 const router = Router();
 
