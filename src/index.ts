@@ -1,11 +1,15 @@
+import "dotenv/config";
 import express from "express";
+import authRoutes from "./routes/auth";
+import articleRoutes from "./routes/articles";
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-  res.json({ message: "News API is running!" });
-});
+app.use(express.json());
+
+app.use("/auth", authRoutes);
+app.use("/articles", articleRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
